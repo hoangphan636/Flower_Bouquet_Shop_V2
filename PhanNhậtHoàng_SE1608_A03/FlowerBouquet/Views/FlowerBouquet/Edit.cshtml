@@ -1,0 +1,156 @@
+﻿@model  BussinessObject.DataAccess.FlowerBouquet 
+@using Microsoft.AspNetCore.Http
+
+@inject IHttpContextAccessor HttpContextAccessor
+
+@{
+    ViewData["Title"] = "Edit";
+
+}
+
+
+<div class="container">
+    <h2>Edit Flower Bouquet</h2>
+    <form id="editForm">
+        <input type="text" id="flowerBouquetId" name="flowerBouquetId">
+        <div class="form-group">
+            <label for="flowerBouquetName">Name:</label>
+            <input type="text" class="form-control" id="flowerBouquetName" name="flowerBouquetName" required>
+        </div>
+        <div class="form-group">
+            <label for="description">Description:</label>
+            <textarea class="form-control" id="description" name="description" required></textarea>
+        </div>
+        <div class="form-group">
+            <label for="unitPrice">Unit Price:</label>
+            <input type="number" class="form-control" id="unitPrice" name="unitPrice" required>
+        </div>
+        <div class="form-group">
+            <label for="unitsInStock">Units in Stock:</label>
+            <input type="number" class="form-control" id="unitsInStock" name="unitsInStock" required>
+        </div>
+
+        <div class="form-group">
+            <label for="flowerBouquetStatus">flowerBouquetStatus : </label>
+            <input type="number" class="form-control" id="flowerBouquetStatus" name="flowerBouquetStatus" required>
+        </div>
+
+        <div class="form-group">
+            <label for="supplierId">supplierId : </label>
+            <input type="number" class="form-control" id="supplierId" name="supplierId" required>
+        </div>
+     
+   
+        <button type="submit" class="btn btn-primary">Save</button>
+    </form>
+</div>
+
+
+<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+<script type="text/javascript">
+    $(document).ready(function () {
+        var flowerBouquetId = getFlowerBouquetIdFromUrl(); // Get the flowerBouquetId from the URL
+
+        // Load the existing flower bouquet data
+        loadFlowerBouquetData(flowerBouquetId);
+
+        // Handle form submission
+        $("#editForm").submit(function (event) {
+            event.preventDefault(); // Prevent the default form submission
+
+            var flowerBouquet = {
+                flowerBouquetId: $("#flowerBouquetId").val(),
+                flowerBouquetName: $("#flowerBouquetName").val(),
+                description: $("#description").val(),
+                unitPrice: $("#unitPrice").val(),
+                unitsInStock: $("#unitsInStock").val(),
+                categoryId: $("#flowerBouquetStatus").val(),
+                supplierId: $("#supplierId").val()
+            };
+
+            $(document).ready(function () {
+                // Handle form submission
+                $("#editForm").submit(function (event) {
+                    event.preventDefault(); // Prevent the default form submission
+
+                    // Lấy giá trị từ các trường trong form
+                    var flowerBouquet = {
+                        flowerBouquetId: $("#flowerBouquetId").val(),
+                        flowerBouquetName: $("#flowerBouquetName").val(),
+                        description: $("#description").val(),
+                        unitPrice: $("#unitPrice").val(),
+                        unitsInStock: $("#unitsInStock").val(),
+                        categoryId: $("#flowerBouquetStatus").val(),
+                        supplierId: $("#supplierId").val()
+                    };
+
+                    // Sử dụng đối tượng flowerBouquet trong yêu cầu AJAX
+                    $.ajax({
+                        url: "http://localhost:40600/api/FlowerBouquet/" + flowerBouquet.flowerBouquetId,
+                        type: "PUT",
+                        data: JSON.stringify(flowerBouquet),
+                        contentType: "application/json;charset=utf-8",
+                        beforeSend: function (xhr) {
+                            var token = '@HttpContextAccessor.HttpContext.Session.GetString("token")';
+                            xhr.setRequestHeader("Authorization", "Bearer " + token);
+                        },
+                        success: function (result, status, xhr) {
+                            alert("Flower bouquet updated successfully!");
+                            window.location.href = "/FlowerBouquet";
+                        },
+                        error: function (xhr, status, error) {
+                            var errorMessage = xhr.status + ': ' + xhr.statusText;
+                            console.log(errorMessage);
+                            alert("Failed to update the flower bouquet data. Error: " + errorMessage);
+                        }
+                    });
+
+
+
+
+                });
+            });
+
+
+
+
+
+        });
+
+        // Function to load the existing flower bouquet data
+        function loadFlowerBouquetData(flowerBouquetId) {
+            $.ajax({
+                url: "http://localhost:40600/api/FlowerBouquet/" + flowerBouquetId,
+                type: "GET",
+                contentType: "application/json;charset=utf-8",
+                dataType: "json",
+                beforeSend: function (xhr) {
+                    var token = '@HttpContextAccessor.HttpContext.Session.GetString("token")';
+                    xhr.setRequestHeader("Authorization", "Bearer " + token);
+                },
+                success: function (result, status, xhr) {
+                    // Populate the form fields with the existing flower bouquet data
+                    $("#flowerBouquetId").val(result.flowerBouquetId);
+                    $("#flowerBouquetName").val(result.flowerBouquetName);
+                    $("#description").val(result.description);
+                    $("#unitPrice").val(result.unitPrice);
+                    $("#unitsInStock").val(result.unitsInStock);
+                    $("#flowerBouquetStatus").val(result.categoryId);
+                    $("#supplierId").val(result.supplierId);
+                },
+                error: function (xhr, status, error) {
+                    var errorMessage = xhr.status + ': ' + xhr.statusText;
+                    console.log(errorMessage);
+                    alert("Failed to load the flower bouquet data. Error: " + errorMessage);
+                }
+            });
+        }
+
+        // Function to get the flowerBouquetId from the URL
+        function getFlowerBouquetIdFromUrl() {
+            var url = window.location.href;
+            var urlParams = new URLSearchParams(url.split('?')[1]);
+            return urlParams.get('id');
+        }
+    });
+</script>

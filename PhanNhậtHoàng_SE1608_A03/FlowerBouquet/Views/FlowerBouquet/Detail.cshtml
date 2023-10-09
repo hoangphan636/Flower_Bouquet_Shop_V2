@@ -1,0 +1,63 @@
+﻿@model BussinessObject.DataAccess.FlowerBouquet
+@using Microsoft.AspNetCore.Http
+
+@inject IHttpContextAccessor HttpContextAccessor
+
+@{
+    ViewData["Title"] = "Detail";
+
+}
+<div class="container">
+    <h2>Flower Bouquet Detail</h2>
+    <div id="flowerBouquetDetail">
+        <p>Loading...</p>
+    </div>
+</div>
+
+<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+<script type="text/javascript">
+    $(document).ready(function () {
+        var flowerBouquetId = getFlowerBouquetIdFromUrl(); // Get the flowerBouquetId from the URL
+
+        // Load the flower bouquet detail
+        loadFlowerBouquetDetail(flowerBouquetId);
+
+        // Function to load the flower bouquet detail
+        function loadFlowerBouquetDetail(flowerBouquetId) {
+            $.ajax({
+                url: "http://localhost:40600/api/FlowerBouquet/" + flowerBouquetId,
+                type: "GET",
+                contentType: "application/json;charset=utf-8",
+                dataType: "json",
+                beforeSend: function (xhr) {
+                    var token = '@HttpContextAccessor.HttpContext.Session.GetString("token")';
+                    xhr.setRequestHeader("Authorization", "Bearer " + token);
+                },
+                success: function (result, status, xhr) {
+                    var flowerBouquetDetailHtml = `
+                            <p><strong>Flower Bouquet ID:</strong> ${result.flowerBouquetId}</p>
+                            <p><strong>Category ID:</strong> ${result.categoryId}</p>
+                            <p><strong>Flower Bouquet Name:</strong> ${result.flowerBouquetName}</p>
+                            <p><strong>Description:</strong> ${result.description}</p>
+                            <p><strong>Unit Price:</strong> ${result.unitPrice}</p>
+                            <p><strong>Units in Stock:</strong> ${result.unitsInStock}</p>
+                            <p><strong>Flower Bouquet Status:</strong> ${result.flowerBouquetStatus}</p>
+                            <p><strong>Supplier ID:</strong> ${result.supplierId}</p>
+                        `;
+                    $("#flowerBouquetDetail").html(flowerBouquetDetailHtml);
+                },
+                error: function (xhr, status, error) {
+                    console.log(xhr);
+                    alert("Failed to load the flower bouquet detail. Please try again.");
+                }
+            });
+        }
+
+        // Function to get the flowerBouquetId from the URL
+        function getFlowerBouquetIdFromUrl() {
+            var url = window.location.href;
+            var urlParams = new URLSearchParams(url.split('?')[1]);
+            return urlParams.get('id');
+        }
+    });
+</script>

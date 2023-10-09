@@ -1,0 +1,98 @@
+﻿@model IEnumerable< BussinessObject.DataAccess.FlowerBouquet >
+@using Microsoft.AspNetCore.Http
+
+@inject IHttpContextAccessor HttpContextAccessor
+
+@{
+    ViewData["Title"] = "Index";
+
+}
+<a href="@Url.Action("Logout", "FlowerBouquet")">Logout</a>
+
+<div class="container-fluid">
+    <h2>Product List</h2>
+    <table class="table table-striped table-bordered m-2">
+        <thead>
+            <tr>
+                <th>FlowerBouquetId</th>
+                <th>CategoryId</th>
+                <th>FlowerBouquetName</th>
+                <th>Description</th>
+                <th>UnitPrice</th>
+                <th>UnitsInStock</th>
+                <th>FlowerBouquetStatus</th>
+                <th>SupplierId</th>
+            </tr>
+        </thead>
+        <tbody>
+            <!-- The product list will be populated dynamically using AJAX requests -->
+        </tbody>
+    </table>
+</div>
+
+<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+<script type="text/javascript">
+    $(document).ready(function () {
+        loadData();
+
+        function loadData() {
+            $("table tbody").html("");
+            $.ajax({
+                url: "http://localhost:40600/api/FlowerBouquet",
+                type: "GET",
+                contentType: "application/json;charset=utf-8",
+                dataType: "json",
+                beforeSend: function (xhr) {
+                    var token = '@HttpContextAccessor.HttpContext.Session.GetString("token")';
+                    xhr.setRequestHeader("Authorization", "Bearer " + token);
+                },
+                success: function (result, status, xhr) {
+                    $.each(result, function (index, value) {
+                        var row = $("<tr>");
+                        row.append($("<td>").html(value.flowerBouquetId));
+                        row.append($("<td>").html(value.categoryId));
+                        row.append($("<td>").html(value.flowerBouquetName));
+                        row.append($("<td>").html(value.description));
+                        row.append($("<td>").html(value.unitPrice));
+                        row.append($("<td>").html(value.unitsInStock));
+                        row.append($("<td>").html(value.flowerBouquetStatus));
+                        row.append($("<td>").html(value.supplierId));
+
+                 var deleteButton = $("<button>").text("Delete").attr("data-id", value.flowerBouquetId);
+                        row.append($("<td>").append(deleteButton));
+
+                        var editButton = $("<button>").text("Edit").attr("data-id", value.flowerBouquetId);
+                        row.append($("<td>").append(editButton));
+
+
+
+                        // Append the row to the table body
+                        $("table tbody").append(row);
+                    });
+
+              $("button[data-id]").on("click", function () {
+                        var flowerBouquetId = $(this).data("id");
+                        // Redirect to the delete page with the flowerBouquetId
+                        window.location.href = "FlowerBouquet/Delete?id=" + flowerBouquetId;
+                    });
+
+                    $("button[data-id]").on("click", function () {
+                        var flowerBouquetId = $(this).data("id");
+                        // Redirect to the edit page with the flowerBouquetId
+                        window.location.href = "FlowerBouquet/Edit?id=" + flowerBouquetId;
+                    });
+
+
+                },
+                error: function (xhr, status, error) {
+                    console.log(xhr);
+                }
+            });
+        }
+    });
+
+</script>
+
+<style>
+    /* CSS styles for the view */
+</style>

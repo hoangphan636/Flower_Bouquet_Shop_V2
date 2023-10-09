@@ -1,0 +1,88 @@
+﻿@model BussinessObject.DataAccess.FlowerBouquet 
+@using Microsoft.AspNetCore.Http
+
+@inject IHttpContextAccessor HttpContextAccessor
+
+@{
+    ViewData["Title"] = "Create";
+
+}
+
+<div class="container">
+    <h2>Create Flower Bouquet</h2>
+    <form id="createForm">
+        <div class="form-group">
+            <label for="flowerBouquetName">Name:</label>
+            <input type="text" class="form-control" id="flowerBouquetName" name="flowerBouquetName" required>
+        </div>
+        <div class="form-group">
+            <label for="description">Description:</label>
+            <textarea class="form-control" id="description" name="description" required></textarea>
+        </div>
+        <div class="form-group">
+            <label for="unitPrice">Unit Price:</label>
+            <input type="number" class="form-control" id="unitPrice" name="unitPrice" required>
+        </div>
+        <div class="form-group">
+            <label for="unitsInStock">Units in Stock:</label>
+            <input type="number" class="form-control" id="unitsInStock" name="unitsInStock" required>
+        </div>
+        <div class="form-group">
+            <label for="categoryId">Category:</label>
+            <select class="form-control" id="categoryId" name="categoryId" required>
+                <!-- Populate the categories dynamically using AJAX if needed -->
+            </select>
+        </div>
+        <div class="form-group">
+            <label for="supplierId">Supplier:</label>
+            <select class="form-control" id="supplierId" name="supplierId" required>
+                <!-- Populate the suppliers dynamically using AJAX if needed -->
+            </select>
+        </div>
+        <button type="submit" class="btn btn-primary">Create</button>
+    </form>
+</div>
+
+<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+<script type="text/javascript">
+    $(document).ready(function () {
+        // Handle form submission
+        $("#createForm").submit(function (event) {
+            event.preventDefault(); // Prevent the default form submission
+
+            var flowerBouquet = {
+                flowerBouquetName: $("#flowerBouquetName").val(),
+                description: $("#description").val(),
+                unitPrice: $("#unitPrice").val(),
+                unitsInStock: $("#unitsInStock").val(),
+                categoryId: $("#categoryId").val(),
+                supplierId: $("#supplierId").val()
+            };
+
+            $.ajax({
+                url: "http://localhost:40600/api/FlowerBouquet",
+                type: "POST",
+                data: JSON.stringify(flowerBouquet),
+                contentType: "application/json;charset=utf-8",
+                dataType: "json",
+                beforeSend: function (xhr) {
+                    var token = '@HttpContextAccessor.HttpContext.Session.GetString("token")';
+                    xhr.setRequestHeader("Authorization", "Bearer " + token);
+                },
+                success: function (result, status, xhr) {
+                    // Handle the success response
+                    // Redirect to the index page or perform any other action as needed
+                    window.location.href = "FlowerBouquet/Index";
+                },
+                error: function (xhr, status, error) {
+                    // Handle the error response
+                    console.log(xhr);
+                }
+            });
+        });
+    });
+</script>
+
+<style>
+    /* CSS styles for the view */
+</style>
