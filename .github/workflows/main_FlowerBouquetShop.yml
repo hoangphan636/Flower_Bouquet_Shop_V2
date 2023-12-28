@@ -23,10 +23,11 @@ jobs:
           include-prerelease: true
 
       - name: Build with dotnet
-        run: dotnet build --configuration Release -p:ProjectPath=Path/To/Your/Project.csproj
+        run: dotnet build --configuration Release FlowerBouquetShop/FlowerBouquetShop.csproj
+
 
       - name: dotnet publish
-        run: dotnet publish -c Release -o ${{env.DOTNET_ROOT}}/myapp -p:ProjectPath=Path/To/Your/Project.csproj
+        run: dotnet publish -c Release -o ${{env.DOTNET_ROOT}}/myapp -p:ProjectPath=FlowerBouquetShop/FlowerBouquetShop.csproj
 
 
       - name: Upload artifact for deployment job
