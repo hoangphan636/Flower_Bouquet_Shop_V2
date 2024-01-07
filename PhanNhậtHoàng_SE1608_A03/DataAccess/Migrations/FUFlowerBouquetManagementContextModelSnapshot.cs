@@ -76,9 +76,6 @@ namespace DataAccess.Migrations
                     b.Property<string>("Password")
                         .HasColumnType("nvarchar(max)");
 
-                    b.Property<int>("Role")
-                        .HasColumnType("int");
-
                     b.HasKey("CustomerId");
 
                     b.ToTable("Customers");
@@ -92,8 +89,7 @@ namespace DataAccess.Migrations
                             Country = "Country 1",
                             CustomerName = "Customer 1",
                             Email = "customer1@example.com",
-                            Password = "password1",
-                            Role = 0
+                            Password = "password1"
                         },
                         new
                         {
@@ -103,8 +99,7 @@ namespace DataAccess.Migrations
                             Country = "Country 2",
                             CustomerName = "Customer 2",
                             Email = "customer2@example.com",
-                            Password = "password2",
-                            Role = 0
+                            Password = "password2"
                         });
                 });
 
@@ -202,18 +197,18 @@ namespace DataAccess.Migrations
                         {
                             OrderId = 1,
                             CustomerId = 1,
-                            OrderDate = new DateTime(2023, 6, 17, 21, 53, 5, 448, DateTimeKind.Local).AddTicks(7346),
+                            OrderDate = new DateTime(2024, 1, 7, 9, 27, 38, 117, DateTimeKind.Local).AddTicks(6508),
                             OrderStatus = "Completed",
-                            ShippedDate = new DateTime(2023, 6, 18, 21, 53, 5, 449, DateTimeKind.Local).AddTicks(393),
+                            ShippedDate = new DateTime(2024, 1, 8, 9, 27, 38, 117, DateTimeKind.Local).AddTicks(8561),
                             Total = 100.00m
                         },
                         new
                         {
                             OrderId = 2,
                             CustomerId = 2,
-                            OrderDate = new DateTime(2023, 6, 17, 21, 53, 5, 449, DateTimeKind.Local).AddTicks(1647),
+                            OrderDate = new DateTime(2024, 1, 7, 9, 27, 38, 117, DateTimeKind.Local).AddTicks(9402),
                             OrderStatus = "Completed",
-                            ShippedDate = new DateTime(2023, 6, 19, 21, 53, 5, 449, DateTimeKind.Local).AddTicks(1652),
+                            ShippedDate = new DateTime(2024, 1, 9, 9, 27, 38, 117, DateTimeKind.Local).AddTicks(9406),
                             Total = 150.00m
                         });
                 });
