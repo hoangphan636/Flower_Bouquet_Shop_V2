@@ -6413,11 +6413,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\hoang\\Desktop\\PhanNhậtHoàng_SE1608_A03\\DataAccess\\DataAccess.csproj",
+      "projectUniqueName": "C:\\Users\\hoang\\Documents\\GitHub\\Flower_Bouquet_Shop_V2\\PhanNhậtHoàng_SE1608_A03\\DataAccess\\DataAccess.csproj",
       "projectName": "DataAccess",
-      "projectPath": "C:\\Users\\hoang\\Desktop\\PhanNhậtHoàng_SE1608_A03\\DataAccess\\DataAccess.csproj",
+      "projectPath": "C:\\Users\\hoang\\Documents\\GitHub\\Flower_Bouquet_Shop_V2\\PhanNhậtHoàng_SE1608_A03\\DataAccess\\DataAccess.csproj",
       "packagesPath": "C:\\Users\\hoang\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\hoang\\Desktop\\PhanNhậtHoàng_SE1608_A03\\DataAccess\\obj\\",
+      "outputPath": "C:\\Users\\hoang\\Documents\\GitHub\\Flower_Bouquet_Shop_V2\\PhanNhậtHoàng_SE1608_A03\\DataAccess\\obj\\",
       "projectStyle": "PackageReference",
       "fallbackFolders": [
         "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
