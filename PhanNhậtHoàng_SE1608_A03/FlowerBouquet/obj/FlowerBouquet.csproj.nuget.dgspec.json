@@ -1,20 +1,24 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\hoang\\source\\repos\\PhanNhậtHoàng_SE1608_A03\\FlowerBouquet\\FlowerBouquet.csproj": {}
+    "C:\\Users\\hoang\\Documents\\GitHub\\Flower_Bouquet_Shop_V2\\PhanNhậtHoàng_SE1608_A03\\FlowerBouquet\\FlowerBouquet.csproj": {}
   },
   "projects": {
-    "C:\\Users\\hoang\\source\\repos\\PhanNhậtHoàng_SE1608_A03\\BusinessObject\\BusinessObject.csproj": {
+    "C:\\Users\\hoang\\Documents\\GitHub\\Flower_Bouquet_Shop_V2\\PhanNhậtHoàng_SE1608_A03\\BusinessObject\\BusinessObject.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\hoang\\source\\repos\\PhanNhậtHoàng_SE1608_A03\\BusinessObject\\BusinessObject.csproj",
+        "projectUniqueName": "C:\\Users\\hoang\\Documents\\GitHub\\Flower_Bouquet_Shop_V2\\PhanNhậtHoàng_SE1608_A03\\BusinessObject\\BusinessObject.csproj",
         "projectName": "BusinessObject",
-        "projectPath": "C:\\Users\\hoang\\source\\repos\\PhanNhậtHoàng_SE1608_A03\\BusinessObject\\BusinessObject.csproj",
+        "projectPath": "C:\\Users\\hoang\\Documents\\GitHub\\Flower_Bouquet_Shop_V2\\PhanNhậtHoàng_SE1608_A03\\BusinessObject\\BusinessObject.csproj",
         "packagesPath": "C:\\Users\\hoang\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\hoang\\source\\repos\\PhanNhậtHoàng_SE1608_A03\\BusinessObject\\obj\\",
+        "outputPath": "C:\\Users\\hoang\\Documents\\GitHub\\Flower_Bouquet_Shop_V2\\PhanNhậtHoàng_SE1608_A03\\BusinessObject\\obj\\",
         "projectStyle": "PackageReference",
+        "fallbackFolders": [
+          "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
+        ],
         "configFilePaths": [
           "C:\\Users\\hoang\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
         "originalTargetFrameworks": [
@@ -22,14 +26,15 @@
         ],
         "sources": {
           "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
+          "C:\\Program Files\\dotnet\\library-packs": {},
           "https://api.nuget.org/v3/index.json": {}
         },
         "frameworks": {
           "net5.0": {
             "targetAlias": "net5.0",
             "projectReferences": {
-              "C:\\Users\\hoang\\source\\repos\\PhanNhậtHoàng_SE1608_A03\\DataAccess\\DataAccess.csproj": {
-                "projectPath": "C:\\Users\\hoang\\source\\repos\\PhanNhậtHoàng_SE1608_A03\\DataAccess\\DataAccess.csproj"
+              "C:\\Users\\hoang\\Documents\\GitHub\\Flower_Bouquet_Shop_V2\\PhanNhậtHoàng_SE1608_A03\\DataAccess\\DataAccess.csproj": {
+                "projectPath": "C:\\Users\\hoang\\Documents\\GitHub\\Flower_Bouquet_Shop_V2\\PhanNhậtHoàng_SE1608_A03\\DataAccess\\DataAccess.csproj"
               }
             }
           }
@@ -59,21 +64,25 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\7.0.304\\RuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\6.0.417\\RuntimeIdentifierGraph.json"
         }
       }
     },
-    "C:\\Users\\hoang\\source\\repos\\PhanNhậtHoàng_SE1608_A03\\DataAccess\\DataAccess.csproj": {
+    "C:\\Users\\hoang\\Documents\\GitHub\\Flower_Bouquet_Shop_V2\\PhanNhậtHoàng_SE1608_A03\\DataAccess\\DataAccess.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\hoang\\source\\repos\\PhanNhậtHoàng_SE1608_A03\\DataAccess\\DataAccess.csproj",
+        "projectUniqueName": "C:\\Users\\hoang\\Documents\\GitHub\\Flower_Bouquet_Shop_V2\\PhanNhậtHoàng_SE1608_A03\\DataAccess\\DataAccess.csproj",
         "projectName": "DataAccess",
-        "projectPath": "C:\\Users\\hoang\\source\\repos\\PhanNhậtHoàng_SE1608_A03\\DataAccess\\DataAccess.csproj",
+        "projectPath": "C:\\Users\\hoang\\Documents\\GitHub\\Flower_Bouquet_Shop_V2\\PhanNhậtHoàng_SE1608_A03\\DataAccess\\DataAccess.csproj",
         "packagesPath": "C:\\Users\\hoang\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\hoang\\source\\repos\\PhanNhậtHoàng_SE1608_A03\\DataAccess\\obj\\",
+        "outputPath": "C:\\Users\\hoang\\Documents\\GitHub\\Flower_Bouquet_Shop_V2\\PhanNhậtHoàng_SE1608_A03\\DataAccess\\obj\\",
         "projectStyle": "PackageReference",
+        "fallbackFolders": [
+          "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
+        ],
         "configFilePaths": [
           "C:\\Users\\hoang\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
         "originalTargetFrameworks": [
@@ -81,6 +90,7 @@
         ],
         "sources": {
           "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
+          "C:\\Program Files\\dotnet\\library-packs": {},
           "https://api.nuget.org/v3/index.json": {}
         },
         "frameworks": {
@@ -138,21 +148,25 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\7.0.304\\RuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\6.0.417\\RuntimeIdentifierGraph.json"
         }
       }
     },
-    "C:\\Users\\hoang\\source\\repos\\PhanNhậtHoàng_SE1608_A03\\FlowerBouquet\\FlowerBouquet.csproj": {
+    "C:\\Users\\hoang\\Documents\\GitHub\\Flower_Bouquet_Shop_V2\\PhanNhậtHoàng_SE1608_A03\\FlowerBouquet\\FlowerBouquet.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\hoang\\source\\repos\\PhanNhậtHoàng_SE1608_A03\\FlowerBouquet\\FlowerBouquet.csproj",
+        "projectUniqueName": "C:\\Users\\hoang\\Documents\\GitHub\\Flower_Bouquet_Shop_V2\\PhanNhậtHoàng_SE1608_A03\\FlowerBouquet\\FlowerBouquet.csproj",
         "projectName": "FlowerBouquet",
-        "projectPath": "C:\\Users\\hoang\\source\\repos\\PhanNhậtHoàng_SE1608_A03\\FlowerBouquet\\FlowerBouquet.csproj",
+        "projectPath": "C:\\Users\\hoang\\Documents\\GitHub\\Flower_Bouquet_Shop_V2\\PhanNhậtHoàng_SE1608_A03\\FlowerBouquet\\FlowerBouquet.csproj",
         "packagesPath": "C:\\Users\\hoang\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\hoang\\source\\repos\\PhanNhậtHoàng_SE1608_A03\\FlowerBouquet\\obj\\",
+        "outputPath": "C:\\Users\\hoang\\Documents\\GitHub\\Flower_Bouquet_Shop_V2\\PhanNhậtHoàng_SE1608_A03\\FlowerBouquet\\obj\\",
         "projectStyle": "PackageReference",
+        "fallbackFolders": [
+          "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
+        ],
         "configFilePaths": [
           "C:\\Users\\hoang\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
         "originalTargetFrameworks": [
@@ -160,18 +174,18 @@
         ],
         "sources": {
           "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
-          "C:\\Program Files\\dotnet\\sdk\\7.0.304\\Sdks\\Microsoft.NET.Sdk.Web\\library-packs": {},
+          "C:\\Program Files\\dotnet\\library-packs": {},
           "https://api.nuget.org/v3/index.json": {}
         },
         "frameworks": {
           "net5.0": {
             "targetAlias": "net5.0",
             "projectReferences": {
-              "C:\\Users\\hoang\\source\\repos\\PhanNhậtHoàng_SE1608_A03\\BusinessObject\\BusinessObject.csproj": {
-                "projectPath": "C:\\Users\\hoang\\source\\repos\\PhanNhậtHoàng_SE1608_A03\\BusinessObject\\BusinessObject.csproj"
+              "C:\\Users\\hoang\\Documents\\GitHub\\Flower_Bouquet_Shop_V2\\PhanNhậtHoàng_SE1608_A03\\BusinessObject\\BusinessObject.csproj": {
+                "projectPath": "C:\\Users\\hoang\\Documents\\GitHub\\Flower_Bouquet_Shop_V2\\PhanNhậtHoàng_SE1608_A03\\BusinessObject\\BusinessObject.csproj"
               },
-              "C:\\Users\\hoang\\source\\repos\\PhanNhậtHoàng_SE1608_A03\\DataAccess\\DataAccess.csproj": {
-                "projectPath": "C:\\Users\\hoang\\source\\repos\\PhanNhậtHoàng_SE1608_A03\\DataAccess\\DataAccess.csproj"
+              "C:\\Users\\hoang\\Documents\\GitHub\\Flower_Bouquet_Shop_V2\\PhanNhậtHoàng_SE1608_A03\\DataAccess\\DataAccess.csproj": {
+                "projectPath": "C:\\Users\\hoang\\Documents\\GitHub\\Flower_Bouquet_Shop_V2\\PhanNhậtHoàng_SE1608_A03\\DataAccess\\DataAccess.csproj"
               }
             }
           }
@@ -204,7 +218,7 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\7.0.304\\RuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\6.0.417\\RuntimeIdentifierGraph.json"
         }
       }
     }
